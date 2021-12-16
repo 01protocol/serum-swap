@@ -16,7 +16,11 @@ use anchor_spl::token;
 use solana_program::declare_id;
 use std::num::NonZeroU64;
 
+#[cfg(not(feature = "devnet"))]
 declare_id!("22Y43yTVxuUkoRKdm9thyRhQ3SdgQS7c7kB6UNCiaczD");
+
+#[cfg(feature = "devnet")]
+declare_id!("BiUikS42eRsdmkGBu3qXDy8Tu4cuWYYnuFVZzKzjVEET");
 
 // Associated token account for Pubkey::default.
 mod empty {
